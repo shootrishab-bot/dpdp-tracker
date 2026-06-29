@@ -14,6 +14,14 @@ import MobileNav from '@/components/MobileNav'
 export const metadata: Metadata = {
   title: 'Trackr - DPDP Compliance Tracker',
   description: 'Track phased compliance obligations under the Digital Personal Data Protection Act 2023 and Rules 2025',
+  icons: {
+    icon: [
+      { url: '/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
+      { url: '/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
+    ],
+    apple: '/apple-touch-icon.png',
+  },
+  manifest: '/site.webmanifest',
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
