@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect, useRef, Suspense } from 'react'
 import { useSearchParams } from 'next/navigation'
 import { useStore } from '@/lib/context'
 import { CATEGORY_LABELS } from '@/lib/obligations-data'
@@ -14,7 +14,7 @@ const PENALTY_BADGE: Record<string, string> = {
   critical: 'badge-critical', high: 'badge-high', medium: 'badge-medium', low: 'badge-low',
 }
 
-export default function ObligationsPage() {
+function ObligationsInner() {
   const { relevantObligations, statuses, notes, assignees, setStatus, setNote, setAssignee } = useStore()
   const [expanded, setExpanded] = useState<string | null>(null)
   const searchParams = useSearchParams()
@@ -147,5 +147,13 @@ export default function ObligationsPage() {
         )}
       </div>
     </div>
+  )
+}
+
+export default function ObligationsPage() {
+  return (
+    <Suspense fallback={<div className="page"><h1 className="page-title">Obligations</h1></div>}>
+      <ObligationsInner />
+    </Suspense>
   )
 }
