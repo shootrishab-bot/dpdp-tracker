@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { Space_Grotesk } from 'next/font/google'
+import { Analytics } from '@vercel/analytics/next'
 import './globals.css'
 
 const spaceGrotesk = Space_Grotesk({
@@ -64,6 +65,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 
           {/* Mobile bottom nav */}
           <MobileNav />
+
+          <Analytics />
         </StoreProvider>
       </body>
     </html>
