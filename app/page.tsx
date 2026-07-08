@@ -112,23 +112,23 @@ export default function Dashboard() {
         {/* Stats */}
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(140px, 1fr))', gap: 12, marginBottom: 20 }}>
           <div className="stat-card">
-            <div className="stat-label">Compliance score</div>
-            <div className="stat-value" style={{ color: scoreColor, fontSize: 32 }}>{score}%</div>
+            <div className="stat-label" style={{ fontSize: 13, marginBottom: 8 }}>Compliance score</div>
+            <div style={{ fontSize: 48, fontWeight: 700, color: scoreColor, lineHeight: 1, fontVariantNumeric: 'tabular-nums' }}>{score}%</div>
             <div className="progress-bar" style={{ marginTop: 10 }}>
               <div className="progress-fill" style={{ width: `${score}%`, background: scoreColor }} />
             </div>
           </div>
           <div className="stat-card">
-            <div className="stat-label">Total</div>
-            <div className="stat-value" style={{ color: 'var(--text-primary)' }}>{complianceStats.total}</div>
+            <div className="stat-label" style={{ fontSize: 13, marginBottom: 8 }}>Total</div>
+            <div style={{ fontSize: 48, fontWeight: 700, color: 'var(--text-primary)', lineHeight: 1, fontVariantNumeric: 'tabular-nums' }}>{complianceStats.total}</div>
           </div>
           <div className="stat-card">
-            <div className="stat-label">Completed</div>
-            <div className="stat-value" style={{ color: 'var(--green)' }}>{complianceStats.done}</div>
+            <div className="stat-label" style={{ fontSize: 13, marginBottom: 8 }}>Completed</div>
+            <div style={{ fontSize: 48, fontWeight: 700, color: 'var(--green)', lineHeight: 1, fontVariantNumeric: 'tabular-nums' }}>{complianceStats.done}</div>
           </div>
           <div className="stat-card">
-            <div className="stat-label">In progress</div>
-            <div className="stat-value" style={{ color: 'var(--blue)' }}>{complianceStats.in_progress}</div>
+            <div className="stat-label" style={{ fontSize: 13, marginBottom: 8 }}>In progress</div>
+            <div style={{ fontSize: 48, fontWeight: 700, color: 'var(--blue)', lineHeight: 1, fontVariantNumeric: 'tabular-nums' }}>{complianceStats.in_progress}</div>
           </div>
         </div>
 
@@ -139,7 +139,7 @@ export default function Dashboard() {
               <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
                 <Clock size={13} color="var(--red)" />
                 <span style={{ fontSize: 13, fontWeight: 600, color: '#fca5a5' }}>
-                  {overdueRights.length} rights request{overdueRights.length > 1 ? 's' : ''} past 7-day deadline
+                  {overdueRights.length} rights request{overdueRights.length > 1 ? 's' : ''} open - respond without undue delay
                 </span>
               </div>
               <Link href="/rights" style={{ fontSize: 12, color: '#fca5a5', display: 'flex', alignItems: 'center', gap: 4 }}>
